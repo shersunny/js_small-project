@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temprature Conveter.</title>
+    <style>
+        body{
+            background-color: aqua;
+            padding: 60px 100px; }
+        
+            h1{
+                text-align: center;
+            }
+            #container{
+                text-align: center;
+                background-color: blueviolet;
+                padding: 50px 10px;
+               
+            }
+            h2{
+                text-align: right;
+            }
+            .input-div{
+                display: inline-block;
+                padding: 10px 5px;
+            }
+            .inp{
+                padding: 8px 12px;
+                margin: 10px;
+                text-align: center;
+            }
+            label{
+                color: yellow;
+                font-size: large;
+                font-weight: bold;
+            }
+       </style>
+</head>
+<body>
+    <h1>Temprature conveter:</h1>
+    <h2>Made by Sunny</h2>
+    <div id="container">
+
+        
+        <div class="input-div">
+            <label>Celsius</label> <br>
+            <input type="number" id="cel" class="inp" value="0">
+        </div>
+       
+        <div class="input-div">
+            <label >Fahrenheit</label> <br>
+            <input type="number" id="fah" class="inp" value="32">
+
+        </div>
+    </div>
+    <script>
+        var cel = document.getElementById("cel");
+        var fah = document.getElementById("fah");
+
+        cel.addEventListener('input' , function() {
+            let c = this.value;
+            let f = c*(9/5) + 32;
+            if(!Number.isInteger(f)){
+                f = f.toFixed(4);
+
+            }
+            fah.value = f;
+        });
+
+        fah.addEventListener('input' , function() {
+            let f = this.value;
+
+         let c = 5/9*(f-32);
+         if(!Number.isInteger(c)){
+            c = c.toFixed(4);
+         }
+            cel.value = c;
+        });
+    </script>
+</body>
+</html>

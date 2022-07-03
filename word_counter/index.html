@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+             padding: 100px 100px;
+         }
+         h1{
+            margin: 0;
+             padding: 10px 12px;
+             background-color: blueviolet;
+             color: white;
+             text-align: center;
+         }
+         #text-box{
+             width: 99.5%;
+             border-color: blueviolet;
+             font-size: 20px;
+             font-weight: bold;
+         }
+         #result {
+            margin: 0;
+             padding: 10px 12px;
+             background-color: blueviolet;
+             color: white;
+             text-align: center;
+             font-size: 25px;
+
+         }
+         h2 {
+            text-align: right;
+            background-color: aqua;
+            text-decoration: double;
+
+         }
+         
+         
+
+    </style>
+</head>
+<body>
+    <h2>Made By Sunny</h2>
+    <h1>Word and Charecter counter</h1>
+    <textarea id="text-box" cols="30" rows="10"></textarea> <br>
+    <div id="result">
+        <span id="word" >0</span> words and
+        <span id="char">0</span> Charecter
+    </div>
+</body>
+<script>
+   let textbox = document.getElementById('text-box');
+    textbox.addEventListener('input' , function(){
+        var tex = this.value;
+        let cha = tex.length;
+        document.getElementById("char").innerHTML = cha;
+        
+        tex = tex.trim();
+        let words = tex.split(' ');
+        let cleanList = words.filter(function(elm){
+            return elm != " ";
+        })
+        // console.log(words)
+        document.getElementById('word').innerHTML = cleanList.length;
+    })
+    
+</script>
+</html>
